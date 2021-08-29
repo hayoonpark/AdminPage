@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api")
 public class PostController {
-    //HTML <Form>
-    //ajax 검색
-    //http post body -> data
-    //json, xml, multipart-form, text-plain... => ,produces = {"aplication-json"}
 
-//    @RequestMapping(method = RequestMethod.POST, path = "postMethod")
+    // HTML <Form>
+    // ajax 검색
+    // http post body -> data
+    //  json, xml, multipart-form / text-plain
+
     @PostMapping(value = "/postMethod")
     public SearchParam postMethod(@RequestBody SearchParam searchParam){
         return searchParam;
@@ -21,6 +21,7 @@ public class PostController {
     public void put(){
 
     }
+
     @PatchMapping("/patchMethod")
     public void patch(){
 

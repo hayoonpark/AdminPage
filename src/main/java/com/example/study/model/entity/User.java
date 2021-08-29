@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity // == table
+@Entity
 public class User {
 
     @Id
@@ -30,4 +30,5 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
 }
