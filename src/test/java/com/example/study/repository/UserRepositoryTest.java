@@ -6,8 +6,10 @@ import com.example.study.model.entity.User;
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Ignore
 public class UserRepositoryTest extends StudyApplicationTests {
@@ -31,8 +33,14 @@ public class UserRepositoryTest extends StudyApplicationTests {
         System.out.println("newUser : " + newUser);
     }
 
-    public void read(){
+    @Test
+    public void read(@RequestParam Long id){
+        Optional<User> user = userRepository.findById(id);
 
+        user.ifPresent(selectUser -> {
+            System.out.println("user : " + selectUser);
+            System.out.println("email : " + selectUser.getEmail());
+        });
     }
 
     public void update(){
